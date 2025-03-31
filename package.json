@@ -1,0 +1,21 @@
+{
+  "name": "jira-kanban-cypress-tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --reporter mochawesome --reporter-options reportDir=cypress/results,html=true,json=true",
+    "report:merge": "mochawesome-merge cypress/results/*.json > cypress/results/report.json",
+    "report:generate": "mochawesome-report-generator cypress/results/report.json --reportDir=cypress/results"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.4.1",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
