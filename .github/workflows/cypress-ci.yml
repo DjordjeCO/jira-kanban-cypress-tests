@@ -21,15 +21,16 @@ jobs:
         with:
           node-version: 18
 
-      - name: 📦 Instalacija dependencija
-        run: npm install
+      - name: 🧹 Čišćenje keša i instalacija dependencija
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
 
       - name: 🚀 Pokretanje Cypress testova
-        run: npx cypress run --reporter mochawesome
+        run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/results,html=true,json=true
 
       - name: 📝 Upload test izveštaja
         uses: actions/upload-artifact@v4
         with:
           name: cypress-test-report
-          path: cypress/reports
-
+          path: cypress/results
