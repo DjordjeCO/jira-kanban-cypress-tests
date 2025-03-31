@@ -13,9 +13,11 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "devDependencies": {
+"devDependencies": {
+    "cypress": "^14.2.1",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.4.1",
     "mochawesome-report-generator": "^6.2.0"
-  }
+}
+
 }
